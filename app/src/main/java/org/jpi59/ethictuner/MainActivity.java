@@ -347,7 +347,7 @@ public final class MainActivity extends Activity {
     private void showLegalNotice() { EthicEcosystemMenu.show(this, darkMode); }
     private void requestOrToggle() {
         if (running) { stop(); return; }
-        if (checkSelfPermission(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) { requestNotificationThenStart(); return; }
+        if (checkSelfPermission(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) { beginTuning(); return; }
         new AlertDialog.Builder(this).setTitle(R.string.microphone_title).setMessage(R.string.permission_rationale)
                 .setNegativeButton(R.string.not_now, (dialog, which) -> showPermissionNeeded())
                 .setPositiveButton(R.string.continue_action, (dialog, which) -> requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_MICROPHONE)).show();
@@ -355,9 +355,7 @@ public final class MainActivity extends Activity {
     @Override public void onRequestPermissionsResult(int r, String[] p, int[] g) {
         super.onRequestPermissionsResult(r, p, g);
         if (r == REQUEST_MICROPHONE) {
-            if (g.length > 0 && g[0] == PackageManager.PERMISSION_GRANTED) requestNotificationThenStart(); else showPermissionNeeded();
-        } else if (r == REQUEST_NOTIFICATIONS) {
-            beginTuning();
+            if (g.length > 0 && g[0] == PackageManager.PERMISSION_GRANTED) beginTuning(); else showPermissionNeeded();
         }
     }
     private void showPermissionNeeded() { status.setText(R.string.permission_needed); status.setVisibility(View.VISIBLE); }

@@ -1,1 +1,1 @@
-Afinador cromático privado y sin conexión con retroalimentación precisa de tono.
+Afinador cromático privado y offline con detección precisa de tono.

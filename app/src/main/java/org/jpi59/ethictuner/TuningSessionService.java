@@ -18,12 +18,8 @@ public final class TuningSessionService extends Service {
     private static final String CHANNEL_ID = "tuning_session";
     private static final int NOTIFICATION_ID = 4101;
 
-    public static void start(Context context) {
-        Intent intent = new Intent(context, TuningSessionService.class);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) context.startForegroundService(intent); else context.startService(intent);
-    }
-
-    public static void stop(Context context) { context.stopService(new Intent(context, TuningSessionService.class)); }
+    public static void start(Context context) { }
+    public static void stop(Context context) { }
 
     @Override public int onStartCommand(Intent intent, int flags, int startId) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
