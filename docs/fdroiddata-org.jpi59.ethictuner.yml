@@ -4,12 +4,12 @@ Categories:
   - Multimedia
 License: GPL-3.0-or-later
 AuthorName: jpi59
-SourceCode: https://github.com/jpi59/ethic-tuner
-IssueTracker: https://github.com/jpi59/ethic-tuner/issues
-Changelog: https://github.com/jpi59/ethic-tuner/releases
+SourceCode: https://github.com/IDEH-Labs/ethic-tuner
+IssueTracker: https://github.com/IDEH-Labs/ethic-tuner/issues
+Changelog: https://github.com/IDEH-Labs/ethic-tuner/releases
 
 RepoType: git
-Repo: https://github.com/jpi59/ethic-tuner.git
+Repo: https://github.com/IDEH-Labs/ethic-tuner.git
 
 Builds:
   - versionName: 1.0.29
