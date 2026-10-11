@@ -54,9 +54,10 @@ by Git. Do not publish an unsigned APK. Verify a signed APK with
 `apksigner verify --verbose --print-certs <apk>` before attaching it to a
 release.
 
-F-Droid builds and signs its own artifacts from the published source and
-metadata, so a future F-Droid APK will use a different certificate from a
-directly distributed APK. `local.properties` is also machine-specific and must
+The F-Droid recipe is set up for reproducible builds: if F-Droid accepts it, F-Droid
+builds the source, checks that the result matches the published APK and distributes
+that APK signed by the developer, so F-Droid and direct installations can update
+each other. `local.properties` is also machine-specific and must
 not be committed. See [the release handover](docs/RELEASING.md) for the exact
 maintainer sequence.
 
